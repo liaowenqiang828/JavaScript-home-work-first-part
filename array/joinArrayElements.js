@@ -11,8 +11,8 @@ function joinArrayElement(array, seperator) {
       break;
 
     case (","):
-    console.log(array.toString());
-    break;
+      console.log(array.toString());
+      break;
 
     default:
       console.log("Please input right array and seperator like  ' ', '+', ','" );

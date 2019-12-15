@@ -1,6 +1,6 @@
 var  aArray = [1, 2, 3, 4, 5];
 
-var arrayMultipleTwo = aArray.map(function (item, index, array) {
+var arrayMultipleTwo = aArray.map(function (item) {
   return item * 2;
 });
 
