@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      function login() {
+        var account = document.getElementById("account").value;
+        var password = document.getElementById("password").value;
+
+        if (account === "123" && password === "123") {
+         window.location.href="https://school.thoughtworks.cn";
+        }
+        else {
+          document.getElementById("account").value="";
+          document.getElementById("password").value="";
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <form>
+      账号：<input type="text " name="账号：" id="account" />
+      密码：<input type="text" name="密码：" id="password" />
+      <input type="button" value="登录" onclick=javascript:login() />
+    </form>
+  </body>
+</html>
