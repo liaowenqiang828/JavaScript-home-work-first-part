@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>square move page</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./square-move.css"/>
+
+    <script>
+      // document.addEventListener("click", function() {
+      //   document.querySelector(".green-square").style.backgroundColor = "red";
+      // }, false);
+
+    function onclick(obj) {
+      obj.style.backgroundColor = "red";
+      obj.innerHTML = "松开鼠标";
+    }
+    </script>
+  </head>
+
+  <body>
+    <div class="gray-bg">
+      <div class="green-square" onclick="onclick(this)"></div>
+      <div class="yellow-square" onclick="onclick(this)"></div>
+    </div>
+  </body>
+
+</html>

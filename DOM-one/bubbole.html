@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+
+    <style type="text/css">
+      #box1 {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+      }
+
+      #box2 {
+        width: 100px;
+        height: 100px;
+
+        background-color: green;
+      }
+    </style>
+
+    <script>
+      function $(id) {
+        return document.getElementById(id);
+      }
+
+      $("box2").onclick = function (e) {
+        var e = e || window.event;
+        e.target.style.backgroundColor = "blue";
+      }
+      $("box1").onclick = function(e) {
+        var e = e || window.event;
+        alter("box1");
+      }
+      document.body.addEventListener(onclick, function() {
+        document.body.style.backgroundColor = "blue";
+      }, false);
+    </script>
+  </head>
+
+  <body>
+    <div id="box1">
+      <div id="box2"></div>
+    </div>
+  </body>
+</html>

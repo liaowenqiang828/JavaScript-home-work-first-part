@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>square-move</title>
+    <link rel="stylesheet" href="./square-move.css" />
+  </head>
+
+  <body>
+    <div id="gray-bg">
+      <div id="yellow-square"></div>
+      <div id="green-square" draggable="true"></div>
+    </div>    
+    <script>
+        var moveElem = document.getElementById("green-square");
+  
+        var dragging;
+        var tLeft, tTop;
+  
+        document.addEventListener("mousedown", function(e) {
+          if (e.target == moveElem) {
+            dragging = true;
+            var moveElemRect = moveElem.getBoundingClientRect();
+            tLeft = e.clientX - moveElemRect.left;
+            tTop = e.clientY - moveElemRect.top;
+
+            // tLeft = e.clientX - moveElem.offsetLeft;
+            // tTop = e.clientY - moveElem.offsetTop;
+          }
+        });
+      document.addEventListener("mouseup", function(e) {
+        dragging = false;
+      });
+  
+      document.addEventListener("mousemove", function(e) {
+        if (dragging) {
+          var moveX = e.clientX + tLeft - 220;
+          var moveY = e.clientY - tTop;
+
+          moveElem.style.left = moveX + "px";
+          moveElem.style.top = moveY + "px";
+        }
+        
+        var colorChange = document.getElementById("yellow-square");
+        var colorChangeRect = colorChange.getBoundingClientRect();
+
+        var colorChangeX = colorChangeRect.left;
+        var colorChangeY = colorChangeRect.top;
+
+        if ((moveElem.style.left >= ((colorChangeX - 80 - 183)+ "px") && moveElem.style.left <= ((colorChangeX + 80 - 183) + "px")) 
+        && (moveElem.style.top >= ((colorChangeY-80) + "px") && moveElem.style.top <= ((colorChangeY + 80) + "px"))) {
+          colorChange.style.backgroundColor = "blue";
+        }
+
+        if (moveElem.style.left < (0 + "px")) {
+          moveElem.style.left = 0 + "px";
+        }
+        if (moveElem.style.left > (920 + "px")) {
+          moveElem.style.left = 920 + "px";
+        }
+      });
+
+    </script>
+
+  </body>
+</html>
