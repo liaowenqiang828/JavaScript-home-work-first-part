@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.carProductPage {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+table {
+  width: 1002px;
+  height: 70px;
+
+  text-align: center;
+  border-collapse: collapse;
+  /* display: flex; */
+  align-items: center;
+  flex-direction: column;
+  /* border-right: solid 1px gray;
+  border-bottom: solid 1px gray; */
+  border: solid 1px gray;
+
+
+}
+.tableCell {
+  width: 198px;
+  height: 53px;
+
+  /* padding-top: 15px; */
+  
+  /* border-top: solid 1px gray;
+  border-left: solid 1px gray; */
+  border: solid 1px gray;
+
+  text-align: center;
+
+  font-size: 26px;
+  /* display: inline-block; */
+  /* border-spacing: 0; */
+}
+
+.checkBox {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  background-color: lightgray;
+}
+.countAdd, .countSub {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  background-color: lightgray;
+}
+.countNum {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  /* background-color: lightgray; */
+}
+
+.checkAll {
+  width: 30px;
+  height: 30px;
+  /* display: inline-block; */
+  background-color: lightgray;
+}
+.selectAll {
+  width: 200px;
+  height: 53px;
+
+  font-size: 26px;
+  /* padding-top: 15px; */
+
+  border: solid 1px grey;
+}
+.totalMoneyCal {
+  width: 800px;
+  height: 53px;
+
+  font-size: 26px;
+  /* padding-top: 15px; */
+
+  border: solid 1px grey;
+
+  text-align: right;
+}

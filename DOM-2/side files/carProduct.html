@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>carProduct</title>
+    <link rel="stylesheet" href="./carProduct.css">
+  </head>
+
+  <body>
+    <div id="carProductPage">
+
+      <p class="mainTitle">文具店购物车</p>
+        <table id="colTitle">
+          <tr>
+            <td class="select">选择</td>
+            <td class="name">商品名称</td>
+            <td class="price">商品单价（￥）</td>
+            <td class="count">商品数量</td>
+            <td class="money">总价（￥）</td>
+          </tr>
+        </table>
+
+      <ul id="productList">
+      </ul>
+
+    </div>
+
+    <script>
+      const data = [
+        {
+          "id": 1,
+          "name": "英雄牌 钢笔",
+          "count": 1,
+          "price": 69,
+          "checked": false
+        },
+        {
+          "id": 2,
+          "name": "晨光牌 铅字笔",
+          "count": 2,
+          "price": 5.5,
+          "checked": true 
+        },
+        {
+          "id": 3,
+          "name": "晨光牌 铅笔",
+          "count": 1,
+          "price": 2,
+          "checked": false
+        },
+        {
+          "id": 4,
+          "name": "狗熊牌 橡皮擦",
+          "count": 1,
+          "price": 1,
+          "checked": false
+        },
+        {
+          "id": 5,
+          "name": "瑞士牌 双肩书包",
+          "count": 1,
+          "price": 199,
+          "checked": true
+        },
+        {
+          "id": 6,
+          "name": "晨光牌 作业本",
+          "count": 5,
+          "price": 2.5,
+          "checked": false
+        }
+    ]
+
+      function load () {
+        var productUl = document.getElementById("productList");
+        
+        for (var i = 0, len = data.length; i < len; i++) {
+          var aItem = document.createElement("li");
+          aItem.setAttribute("id", i + 1);
+          // aItem.setAttribute("onclick", clickOneItem());
+          var itemData = data[i];
+
+          itemData["money"] = parseInt(itemData["count"]) * parseInt(itemData["price"]);
+          
+          aItem.innerHTML = '<div class="select"><input id="selectOne" onclick="selectOne" type="checkbox" class="checkBox" checked></input><div>';
+          aItem.innerHTML += '<div class="name">' + itemData["name"] + '<div>';
+          aItem.innerHTML += '<div class="price">' + itemData["price"] + '<div>';
+          aItem.innerHTML += '<div class="count"><div class="countSub" onclick="countSub">-</div><div class=countNum>'+itemData["count"]+'</div><div class="countAdd" onclick="countAdd">+</div></div>';
+          aItem.innerHTML += '<div class="money" id="money"><div>';
+  
+          productUl.appendChild(aItem);
+        }
+
+        var ulLastChild = productUl.lastChild;
+        var sumLine = document.createElement("li");
+
+        sumLine.innerHTML = `<div class="allSelect"><input type="checkbox" id="selectAll" onclick="selectAll" class="checkBox">全选</input></div>
+          <div class="productCal">共计件商品，￥</div>`
+        productUl.appendChild(sumLine);
+
+      function countAdd (event) {
+        var bottom = event.target;
+
+
+      }
+
+      function clickOneItem () {
+        var aItemId = event.target.getAttribute("id");
+
+        if (event.currentTarget === document.getElementById("selectOne")) {
+          selectOne();
+        }
+        elseif (event.currentTarget === document.getElementById("countAdd")) {
+          countAdd();
+        }
+        elseif (event.currentTarget === document.getElementById("countSub")) {
+          countSub();
+        }
+      }
+
+      // function countSub () {
+
+      // }
+      function moneyCal () {
+        var money = 0;
+        for (var i = 0, len = data.length; i < len; i++) {
+          if (data[i]["checked"]) {
+            money = data[i]["count"] * data[i]["price"];
+          }
+        }
+        return money;
+
+      }
+      // function selectOne (event) {
+      //   var itemAdd = event.target;
+      //   // if (itemAdd)
+
+      // }
+      function selectAll () {
+        var selectAll = event.target;
+        for (var i = 0, len=data.length; i < len; i++) {
+          data[i]["checked"] = "true";
+        }
+
+      }
+      function sumAll () {
+        var totalMoney = 0;
+        for (var i = 0, len=data.length; i < len; i++) {
+          if (data[i]["checked"]) {
+            totalMoney += data[i]["money"];
+          }
+        }
+        return totalMoney;
+      }
+
+
+    }
+
+
+      var addButton = document.getElementsByClassName("countAdd");
+      for (var i = 0, len = addButton.length; i < len; i++) {
+        addButton[i].onclick = function() {
+          var button = this;
+          priceNode = this.parentElement.previousElementSibling;
+          moneyNode = this.parentElement.nextElementSibling;
+          countNode = button.parentNode.childNodes[1];
+          num = countNode.innerText;
+          num = parseInt(num);
+          num++;
+          countNode.innerText = num;
+
+          price = priceNode.innerText;
+          price = parseInt(price);
+
+          moneyNode.innerText = price * num + "元";
+
+        }
+      }
+
+      var subButton = document.getElementsByClassName("countSub");
+      for (var j = 0, lenSub = subButton.length; j < lenSub; j++) {
+        subButton[j].onclick = function() {
+          var button = this;
+          priceNode = this.parentElement.previousElementSibling;
+          moneyNode = this.parentElement.nextElementSibling;
+          countNode = button.parentNode.childNodes[1];
+          num = countNode.innerText;
+          num = parseInt(num);
+          if (num > 1) {
+            num--;
+          }
+          countNode.innerText = num;
+
+          price = priceNode.innerHTML;
+          price = parseInt(price);
+
+          moneyNode.innerText = price * num + "元";
+        }
+      }
+
+      load();
+    </script>
+  </body>
+</html>
