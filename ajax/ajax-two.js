@@ -1,38 +1,46 @@
+let XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+
+var options = {
+  url: "https://zhuanlan.zhihu.com/api/columns/biancheng/articles",
+  method: "get",
+  headers: {key: "Content-Type", value:"application/x-www-form-urlencoded"},
+  data: "uers name",
+  success: function(xhr) {
+    console.log(xhr.responseText);
+  },
+  fail: function(xhr) {
+    console.log("failed to request");
+  }
+};
 
 var request = function(options) {
-  let XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-  let ajaxIstance = new XMLHttpRequest();
+  let ajaxInstance = new XMLHttpRequest();
 
   if (options.method === "post") {
-    ajaxIstance.open(options.url, "post",false);
+    ajaxInstance.open("post", options.url);
 
-    ajaxIstance.setRequestHeader(options.headers.key, options.headers.value);
-    ajaxIstance.send(encodeURIComponent(options.data));
-    
-    } else {
-      ajaxIstance.open(options.url, options.method, false);
-      ajaxIstance.send();
-    }
+    ajaxInstance.setRequestHeader(options.headers.key, options.headers.value);
+    ajaxInstance.send(encodeURIComponent(options.data));
 
-    ajaxIstance.onreadystatechange = function() {
-      if (ajaxIstance.readyState === 4 && ajaxIstance.status === 200 || ajaxIstance.status === 304) {
-        // options.success(ajaxIstance.responseText);
-        console.log(ajaxIstance.responseText);
-
+    ajaxInstance.onreadystatechange = function() {
+      if (ajaxInstance.readyState === 4 && ajaxInstance.status === 200 || ajaxInstance.status === 304) {
+        options.success(ajaxInstance);
       } else {
-        // options.fail("some error happen!!");
-        console.log("some error happens");
+        options.fail();
       }
-    }
-  }
+    };
 
-  var options = {
-    url: "https://zhuanlan.zhihu.com/p/64167474",
-    method: "get",
-    headers: {key: "Content-Type", value:"application/x-www-form-urlencoded"},
-    data: "uers name",
-    success: function(result) {console.log(result)},
-    fail: function(error) {console.log(error)}
+  } else {
+    ajaxInstance.open("get", options.url);
+    ajaxInstance.send();
+    ajaxInstance.onreadystatechange = function() {
+      if (ajaxInstance.readyState === 4 && ajaxInstance.status === 200 || ajaxInstance.status === 304) {
+        options.success(ajaxInstance);
+      } else {
+        options.fail();
+      }
+    };
   }
-  
-  request(options);
+}
+
+request(options);
