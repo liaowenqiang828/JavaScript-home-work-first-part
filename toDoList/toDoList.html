@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./toDoList.css" type="text/css">
+<script type="text/javascript" src="./toDoList.js" async></script>
+</head>
+<body>
+
+  <div id="myDIV" class="toDoBg">
+    <div class="toDoContainer">
+      <h2>To Do List</h2><br/>
+      <p>Simple ToDo List with adding and filter by status</p><br/>
+      <input type="text" id="myInput" class="inputing">
+      <input type="button" onclick="addNewElement()" class="addButton" value="Add"></input>
+      <br />
+      <br />
+      <ol id="allTaskList" class="orderList">
+      </ol>
+
+      <div class="buttomButton">
+          <button id="ALL" class="All">ALL</button>
+          <button id="Active" class="Active">Active</button>
+          <button id="Complete" class="Complete">Complete</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
