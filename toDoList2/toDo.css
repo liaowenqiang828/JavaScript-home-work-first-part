@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  height: 100%;
+}
+
+.toDoBg {
+  width: 500px;
+  height: 500px;
+
+  background-color: lightgray;
+  border-radius: 5px;
+  margin: auto;
+}
+.toDoContainer {
+  width: 420px;
+  /* height: 420px; */
+
+  border-radius: 5px;
+  background-color: white;
+  margin: auto;
+  padding: 20px;
+
+  position: relative;
+  top: 20px;
+}
+
+.inputing {
+  width: 250px;
+  height: 30px;
+}
+.addButton {
+  width: 80px;
+  height: 34px;
+
+  text-align: center;
+  background-color: rgb(206, 69, 81);
+  color: white;
+  border-radius: 8px;
+  font-size: 18px;
+}
+
+.buttomButton {
+  width: 320px;
+  padding-top: 50px;
+
+  /* flex-direction: row-reverse;
+  display: inline-block; */
+}
+
+.All, .Active, .Complete {
+  height: 34px;
+
+  text-align: center;
+  background-color: whitesmoke;
+  color: rgb(206, 69, 81);
+  border-radius: 8px;
+  font-size: 18px;
+  padding: 0 5px;
+
+  /* display: flex;
+  flex-direction: row-reverse; */
+}
+/* .All {
+  position: absolute;
+  top: 400px;
+  left: 150px;
+}
+.Active {
+  position: absolute;
+  top: 400px;
+  left: 200px;
+}
+.Complete {
+  position: absolute;
+  top: 400px;
+  left: 267px;
+} */
+
+.orderList {
+  margin-left: 20px;
+}

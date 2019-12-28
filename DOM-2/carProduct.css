@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  height: 100%;
+
+  text-align: center;
+}
+
+#carProductPage {
+  width: 1000px;
+  height: 534px;
+
+  border: solid 1px gray;
+  margin: auto;
+  text-align: center;
+}
+.mainTitle {
+  font-size: 30px;
+}
+#colTitle {
+  width: 1000px;
+  height: 70px;
+
+  text-align: center;
+}
+
+table{
+  /* border: solid 1px grey; */
+  border-collapse: collapse;
+}
+tr {
+  width: 1000px;
+  height: 70px;
+  }
+td {
+  width: 200px;
+  height: 70px;
+
+  font-size: 26px;
+  border: solid 1px grey;
+}
+#productList {
+  width: 1000px;
+  
+   
+}
+#sumLine {
+  width: 1000px;
+  height: 100px;
+}
+.allSelect {
+  width: 198px;
+  height: 53px;
+
+  font-size: 26px;
+  padding-top: 15px;
+
+  border: solid 1px grey;
+}
+.productCal {
+  width: 798px;
+  height: 53px;
+
+  font-size: 26px;
+  padding-top: 15px;
+
+  border: solid 1px grey;
+
+  text-align: right;
+}
+li {
+  width: 1000px;
+  height: 70px;
+
+  display: flex;
+}
+.select, .name, .price, .money {
+  width: 198px;
+  height: 53px;
+
+  padding-top: 15px;
+  
+  border: solid 1px gray;
+  text-align: center;
+
+  font-size: 26px;
+  display: inline-block;
+}
+.count {
+  width: 198px;
+  height: 53px;
+
+  padding-top: 15px;
+  
+  border: solid 1px gray;
+  text-align: center;
+
+  font-size: 26px;
+  display: inline-block;
+}
+
+.checkBox {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  background-color: lightgray;
+}
+.checkBoxSelected {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  background-color: lightgray;
+}
+.checkBoxNotSelected {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  background-color: lightgray;
+}
+
+
+.countAdd, .countSub {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  background-color: lightgray;
+}
+.countNum {
+  width: 40px;
+  height: 30px;
+  display: inline-block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

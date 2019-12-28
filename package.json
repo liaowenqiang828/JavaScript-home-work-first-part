@@ -1,0 +1,23 @@
+{
+  "name": "javascript-homework",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "jasmine": "^3.5.0"
+  },
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liaowenqiang828/JavaScript-home-work-first-part.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liaowenqiang828/JavaScript-home-work-first-part/issues"
+  },
+  "homepage": "https://github.com/liaowenqiang828/JavaScript-home-work-first-part#readme",
+  "description": ""
+}
